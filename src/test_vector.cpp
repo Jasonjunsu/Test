@@ -18,6 +18,16 @@ void test_vector() {
     print_vector(b);
     print_vector(c);
     print_vector(d);
+    a.push_back(6);
+    a.emplace_back(7);
+    std::cout << a.back() << std::endl; // 7
+    std::cout << a.at(1) << std::endl; //2
+    std::cout << a.front() << std::endl; // 1
+    print_vector(a);  // 1 2 3 4 5 6 7
+    std::cout << *(a.insert(a.begin()+2, 1)) << std::endl; //1
+    print_vector(a); // 1 2 1 3 4 5 6 7
+    std::cout << *(a.erase(a.begin() + 2)) << std::endl; // 3
+    print_vector(a); // 1 2 3 4 5 6 7
 }
 
 int main() {
